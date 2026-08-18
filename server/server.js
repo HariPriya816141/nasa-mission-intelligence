@@ -428,8 +428,10 @@ app.get("/api/nasa/ask", async (req, res) => {
       `task: search result | query: ${question}`,
     ]);
 
-    // Send embeddings to Python service for semantic ranking
-    const pythonResponse = await axios.post("http://localhost:8000/rerank", {
+    const pythonServiceUrl =
+      process.env.PYTHON_SERVICE_URL || "http://localhost:8000";
+
+    const pythonResponse = await axios.post(`${pythonServiceUrl}/rerank`, {
       queryEmbedding,
       documents,
       documentEmbeddings,
