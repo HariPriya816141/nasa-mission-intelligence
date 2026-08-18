@@ -1,16 +1,64 @@
-# React + Vite
+# NASA Mission Intelligence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-powered NASA technology intelligence platform that retrieves relevant NASA technology sources, performs semantic search and reranking, and generates grounded answers using Google Gemini.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://nasa-mission-intelligence.vercel.app/  
+🔗 **GitHub:** https://github.com/HariPriya816141/nasa-mission-intelligence
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+NASA Mission Intelligence is a full-stack AI application designed to make NASA technology and research information easier to explore through natural-language questions.
 
-## Expanding the ESLint configuration
+Instead of relying only on keyword-based search, the application combines NASA technology data with semantic embeddings, similarity scoring, Python-based reranking, and Gemini-powered response generation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A user can ask a question such as:
+
+> What NASA technologies are related to rocket propulsion?
+
+The system retrieves relevant NASA technology sources, ranks them based on relevance, and generates a concise answer grounded in those sources.
+
+---
+
+## Key Features
+
+- Natural-language querying of NASA technology data
+- NASA API integration
+- Semantic search using Gemini embeddings
+- Cosine similarity-based relevance scoring
+- Keyword-based candidate selection
+- Python/FastAPI reranking service
+- Retrieval-Augmented Generation (RAG)
+- Source-grounded Gemini responses
+- Retrieved source references and semantic relevance scores
+- Pipeline performance metrics
+- React-based responsive interface
+- Cloud deployment using AWS EC2 and Vercel
+
+---
+
+## Architecture
+
+```text
+                    ┌─────────────────────┐
+                    │   React Frontend    │
+                    │      Vercel         │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Node.js /         │
+                    │   Express Server     │
+                    │      AWS EC2        │
+                    └──────────┬──────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+        ┌───────────┐   ┌──────────────┐  ┌─────────────┐
+        │ NASA API  │   │ Gemini        │  │ Python /    │
+        │           │   │ Embeddings    │  │ FastAPI     │
+        │ Technology│   │ + Generation  │  │ Reranking   │
+        │ Data      │   │               │  │ Service     │
+        └───────────┘   └──────────────┘  └─────────────┘
