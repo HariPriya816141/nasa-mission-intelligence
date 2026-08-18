@@ -4,77 +4,86 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #080b12;
   color: #f5f7fa;
 }
 
-button,
-input {
-  font: inherit;
-}
-
 .app {
   min-height: 100vh;
+  padding-bottom: 100px;
 }
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 100px 24px 60px;
+  padding: 110px 30px 70px;
   text-align: center;
 }
 
 .eyebrow {
-  font-size: 12px;
-  letter-spacing: 3px;
+  margin: 0 0 18px;
+  font-size: 13px;
   font-weight: 700;
-  opacity: 0.6;
+  letter-spacing: 4px;
+  color: #9ca3af;
 }
 
 .hero h1 {
-  margin: 14px 0;
-  font-size: clamp(42px, 7vw, 76px);
+  margin: 0;
+  font-size: clamp(56px, 8vw, 88px);
   line-height: 1;
+  letter-spacing: -4px;
 }
 
 .subtitle {
-  max-width: 620px;
-  margin: 20px auto 35px;
-  color: #aeb6c4;
-  font-size: 18px;
+  max-width: 700px;
+  margin: 30px auto 45px;
+  font-size: 20px;
   line-height: 1.6;
+  color: #aeb8c8;
 }
+
+/* =========================
+   SEARCH
+========================= */
 
 .search-container {
   display: flex;
-  max-width: 700px;
+  gap: 12px;
+  max-width: 840px;
   margin: 0 auto;
-  gap: 10px;
 }
 
 .search-container input {
   flex: 1;
-  padding: 16px 18px;
-  border: 1px solid #2a3140;
-  border-radius: 10px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #283141;
+  border-radius: 14px;
   outline: none;
   background: #111722;
   color: white;
+  font-size: 16px;
 }
 
 .search-container input:focus {
-  border-color: #718096;
+  border-color: #596579;
 }
 
 .search-container button {
-  padding: 0 28px;
+  padding: 0 32px;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background: white;
+  border-radius: 14px;
+  background: #f5f5f5;
   color: #080b12;
+  font-size: 16px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .search-container button:disabled {
@@ -82,110 +91,269 @@ input {
   cursor: not-allowed;
 }
 
+/* =========================
+   MAIN
+========================= */
+
 .results-section {
-  max-width: 1000px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 20px 24px 80px;
+  padding: 30px;
 }
 
-.results-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.section-header {
   margin-bottom: 25px;
 }
 
-.results-header h2 {
+.section-header h2 {
   margin: 0;
+  font-size: 30px;
 }
 
-.results-header p {
-  margin: 6px 0 0;
-  color: #8f99a8;
+.section-header > p:last-child {
+  color: #9ca7b8;
+  line-height: 1.6;
 }
 
-.latency {
-  padding: 10px 16px;
-  border: 1px solid #272f3c;
-  border-radius: 10px;
-  color: #8f99a8;
-  font-size: 13px;
+/* =========================
+   AI ANSWER
+========================= */
+
+.answer-section {
+  margin-bottom: 70px;
 }
 
-.latency strong {
-  display: block;
-  margin-top: 4px;
+.answer-card {
+  padding: 32px;
+  border: 1px solid #252e3d;
+  border-radius: 18px;
+  background: #10151f;
+}
+
+.answer-text {
+  color: #dbe2ec;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* Markdown */
+
+.answer-text p {
+  margin: 0 0 18px;
+}
+
+.answer-text p:last-child {
+  margin-bottom: 0;
+}
+
+.answer-text h1,
+.answer-text h2,
+.answer-text h3 {
+  margin: 28px 0 12px;
   color: white;
 }
 
-.results-list {
+.answer-text ul,
+.answer-text ol {
+  padding-left: 25px;
+}
+
+.answer-text li {
+  margin-bottom: 10px;
+}
+
+.answer-text strong {
+  color: white;
+}
+
+/* =========================
+   PERFORMANCE
+========================= */
+
+.performance-section {
+  margin-bottom: 70px;
+}
+
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  padding: 25px;
+  border: 1px solid #252e3d;
+  border-radius: 16px;
+  background: #10151f;
+}
+
+.metric-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #9ca7b8;
+  font-size: 14px;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 30px;
+  color: white;
+}
+
+/* =========================
+   SOURCES
+========================= */
+
+.sources-section {
+  margin-bottom: 60px;
+}
+
+.sources-list {
   display: grid;
   gap: 16px;
 }
 
-.technology-card {
+.source-card {
   padding: 24px;
-  border: 1px solid #252c38;
-  border-radius: 14px;
-  background: #0e131c;
+  border: 1px solid #252e3d;
+  border-radius: 16px;
+  background: #10151f;
+  transition: border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.card-top {
+.source-card:hover {
+  border-color: #465269;
+  transform: translateY(-2px);
+}
+
+.source-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 20px;
   margin-bottom: 16px;
 }
 
 .reference {
-  color: #8f99a8;
-  font-size: 13px;
+  color: #9ca7b8;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .score {
-  font-size: 12px;
-  color: #8f99a8;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #19202d;
+  color: #d8e0eb;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.technology-card h3 {
-  margin: 0 0 12px;
+.source-card h3 {
+  margin: 0 0 18px;
   font-size: 21px;
   line-height: 1.4;
 }
 
-.technology-card p {
-  margin: 0;
-  color: #aeb6c4;
-  line-height: 1.7;
-}
-
-.card-footer {
+.source-footer {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
-  margin-top: 20px;
 }
 
-.card-footer span {
+.source-footer span {
   padding: 6px 10px;
-  border-radius: 6px;
-  background: #171e29;
-  color: #9ea8b8;
+  border-radius: 7px;
+  background: #181f2b;
+  color: #9ca7b8;
   font-size: 12px;
+  text-transform: capitalize;
 }
 
-@media (max-width: 600px) {
+.source-footer span:last-child {
+  background: transparent;
+  padding-left: 0;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading-state {
+  padding: 70px 20px;
+  text-align: center;
+  color: #aeb8c8;
+}
+
+.loading-state h2 {
+  color: white;
+}
+
+.loader {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 25px;
+  border: 3px solid #252e3d;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 18px 22px;
+  border: 1px solid #553333;
+  border-radius: 12px;
+  background: #241416;
+  color: #ffb4b4;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 70px 20px 50px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
   .search-container {
     flex-direction: column;
   }
 
   .search-container button {
-    padding: 14px;
+    padding: 17px;
   }
 
-  .results-header {
-    align-items: flex-start;
-    gap: 15px;
-    flex-direction: column;
+  .performance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-section {
+    padding: 20px;
+  }
+
+  .answer-card {
+    padding: 22px;
   }
 }
