@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080b12;
+  color: #f5f7fa;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.hero h1 {
+  margin: 14px 0;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1;
+}
+
+.subtitle {
+  max-width: 620px;
+  margin: 20px auto 35px;
+  color: #aeb6c4;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.search-container {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 16px 18px;
+  border: 1px solid #2a3140;
+  border-radius: 10px;
+  outline: none;
+  background: #111722;
+  color: white;
+}
+
+.search-container input:focus {
+  border-color: #718096;
+}
+
+.search-container button {
+  padding: 0 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: white;
+  color: #080b12;
+  font-weight: 700;
+}
+
+.search-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.results-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 24px 80px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.results-header h2 {
+  margin: 0;
+}
+
+.results-header p {
+  margin: 6px 0 0;
+  color: #8f99a8;
+}
+
+.latency {
+  padding: 10px 16px;
+  border: 1px solid #272f3c;
+  border-radius: 10px;
+  color: #8f99a8;
+  font-size: 13px;
+}
+
+.latency strong {
+  display: block;
+  margin-top: 4px;
+  color: white;
+}
+
+.results-list {
+  display: grid;
+  gap: 16px;
+}
+
+.technology-card {
+  padding: 24px;
+  border: 1px solid #252c38;
+  border-radius: 14px;
+  background: #0e131c;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.reference {
+  color: #8f99a8;
+  font-size: 13px;
+}
+
+.score {
+  font-size: 12px;
+  color: #8f99a8;
+}
+
+.technology-card h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.technology-card p {
+  margin: 0;
+  color: #aeb6c4;
+  line-height: 1.7;
+}
+
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card-footer span {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #171e29;
+  color: #9ea8b8;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container button {
+    padding: 14px;
+  }
+
+  .results-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+}

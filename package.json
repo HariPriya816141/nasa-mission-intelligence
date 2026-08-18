@@ -1,0 +1,11 @@
+{
+  "name": "nasa-mission-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --dir client dev\" \"pnpm --dir server dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}
