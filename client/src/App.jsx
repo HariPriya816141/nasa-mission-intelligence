@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import "./App.css";
 
 function App() {
+  // const API_URL = import.meta.env.VITE_API_URL;
   const [question, setQuestion] = useState(
     "What NASA technologies are related to rocket propulsion?",
   );
@@ -24,7 +25,7 @@ function App() {
       setPerformance(null);
 
       const response = await fetch(
-        `http://localhost:5000/api/nasa/ask?question=${encodeURIComponent(
+        `${import.meta.env.VITE_API_URL}/api/nasa/ask?question=${encodeURIComponent(
           question,
         )}`,
       );
@@ -40,9 +41,7 @@ function App() {
       setPerformance(data.performance || null);
     } catch (error) {
       console.error("RAG request failed:", error);
-      setError(
-        "NASA Intelligence is temporarily unavailable. Please try again.",
-      );
+      setError(error.message);
     } finally {
       setLoading(false);
     }
