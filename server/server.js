@@ -21,7 +21,14 @@ const cacheStats = {
 };
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://nasa-mission-intelligence.vercel.app",
+      "http://localhost:5173",
+    ],
+  }),
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
