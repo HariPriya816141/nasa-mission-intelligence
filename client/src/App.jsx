@@ -24,10 +24,10 @@ function App() {
       setSources([]);
       setPerformance(null);
 
+      const API_URL = import.meta.env.DEV ? import.meta.env.VITE_API_URL : "";
+
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/nasa/ask?question=${encodeURIComponent(
-          question,
-        )}`,
+        `${API_URL}/api/nasa/ask?question=${encodeURIComponent(question)}`,
       );
 
       const data = await response.json();
